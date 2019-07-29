@@ -1,12 +1,23 @@
 package br.Alura;
 
-public class ICMS implements Imposto {
+public class ICMS extends Imposto {
 	
+	
+public ICMS (Imposto imposto) {
+	
+	super(imposto);
+}
+
+public ICMS () {
+	
+	
+	super();
+}
 	
 
 	@Override
-	public double calculaOrcamento(Orcamento orcamento) {
-		return	(orcamento.getValor() * 0.05) + 50.00;
+	public double calcula(Orcamento orcamento) {
+		return orcamento.getValor() * 0.1 + calculaOutroImposto(orcamento); 
 	}
 
 }
