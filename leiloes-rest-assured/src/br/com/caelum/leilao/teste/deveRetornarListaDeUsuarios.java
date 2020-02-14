@@ -6,8 +6,10 @@ import java.util.List;
 
 import org.junit.Test;
 
+import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.path.json.JsonPath;
 import com.jayway.restassured.path.xml.XmlPath;
+import com.jayway.restassured.response.Response;
 
 import br.com.caelum.leilao.modelo.Usuario;
 import static com.jayway.restassured.RestAssured.*;
@@ -44,4 +46,29 @@ public class deveRetornarListaDeUsuarios {
         assertEquals(esperado1, usuario);
 
     }
+	/*
+	 * exemplo de body com .and
+	@Test
+    public void givenData() {
+        RestAssured.baseURI = "https://maps.googleapis.com";
+
+                Response returnGivenData = given().
+                param("location", "-33.8670522,151.195736").
+                param("radius", "500").
+                param("key", "AIzaSyBde6fW-IAx1j-J5TqNOwmvx-_QPHozqRY").
+                when().
+                get("/maps/api/place/nearbysearch/json").
+                then().assertThat().statusCode(200).and().
+                contentType(ContentType.JSON).and().
+                body("results[0].name", equalTo("Sydney")).and().
+                body("results[0].place_id", equalTo("ChIJP3Sa8ziYEmsRUKgyFmh9AQM")).and().
+                header("Server", "pablo").
+                extract().
+                response();
+        JsonPath responseJson = ReusableMethods.convertRawDataToJson(returnGivenData);
+
+    int count=responseJson.get("results.size()");     //ERROR LINE
+    System.out.println(count);  
+}}
+*/
 }

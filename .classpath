@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="design-patterns3/src"/>
+	<classpathentry kind="src" path="leiloes-rest-assured/src"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/asm-4.0.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/asm-analysis-4.0.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/asm-commons-4.0.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/asm-tree-4.0.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/asm-util-4.0.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/groovy-2.1.2.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/groovy-json-2.1.2.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/groovy-xml-2.1.2.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/gson-2.2.1.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/hamcrest-core-1.2.1.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/hamcrest-library-1.2.1.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/httpclient-4.2.1.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/httpcore-4.2.1.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/httpmime-4.2.1.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/rest-assured-1.8.1.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/signpost-commonshttp4-1.2.1.2.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/signpost-core-1.2.1.2.jar"/>
+	<classpathentry kind="lib" path="leiloes-rest-assured/lib/tagsoup-1.2.1.jar"/>
+	<classpathentry kind="output" path="design-patterns3/bin"/>
+</classpath>
