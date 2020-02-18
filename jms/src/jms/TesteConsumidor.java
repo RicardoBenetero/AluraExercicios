@@ -1,50 +1,54 @@
 package jms;
 
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-
-import org.apache.activemq.Message;
-
 import java.util.Scanner;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 import javax.jms.JMSException;
+import javax.jms.Message;
 import javax.jms.MessageConsumer;
+import javax.jms.MessageListener;
 import javax.jms.Session;
-
+import javax.jms.TextMessage;
+import javax.naming.InitialContext;
 
 public class TesteConsumidor {
 
-	public static void main(String[] args) throws NamingException, JMSException {
-		
+	@SuppressWarnings("resource")
+	public static void main(String[] args) throws Exception {
 		
 		InitialContext context = new InitialContext();
-
-	
-		ConnectionFactory cf = (ConnectionFactory)context.lookup("ConnectionFactory");
-		Connection conexao = cf.createConnection();
-
-		conexao.start();
+		ConnectionFactory factory = (ConnectionFactory) context.lookup("ConnectionFactory");
 		
-		//cria context, factory, connection
-
-		Session session = conexao.createSession(false, Session.AUTO_ACKNOWLEDGE);
+		Connection connection = factory.createConnection(); 
+		connection.start();
+		Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+		
 		Destination fila = (Destination) context.lookup("financeiro");
-		MessageConsumer consumer = session.createConsumer(fila);
+		MessageConsumer consumer = session.createConsumer(fila );
+		
+		consumer.setMessageListener(new MessageListener() {
 
-		Message message = (Message) consumer.receive();
-		System.out.println("Recebendo msg: " + message);
+			@Override
+			public void onMessage(Message message) {
 
-		session.close();
-
-		//scanner e close da  connection e context
-
+				TextMessage textMessage = (TextMessage)message;
+				
+				try {
+					System.out.println(textMessage.getText());
+				} catch (JMSException e) {
+					e.printStackTrace();
+				}
+			}
+			
+		});
+		
+				
 		new Scanner(System.in).nextLine();
-
-		conexao.close();    
+		
+		session.close();
+		connection.close();
 		context.close();
 	}
-
 }
